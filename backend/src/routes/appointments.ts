@@ -15,18 +15,9 @@ const router = Router();
 
 router.post('/', (req, res) => {
   const { error, value } = schema.validate(req.body);
-  if (error) return res.status(400).json({ error: error.message });
+  // TODO:
 
-  const { patientId, doctorId, start, end } = value as Appointment;
-  const conflict = appointments.find(a =>
-    a.doctorId === doctorId &&
-    ((start < a.end && start >= a.start) || (end > a.start && end <= a.end))
-  );
-  if (conflict) {
-    return res.status(409).json({ error: 'Doctor has a conflicting appointment.' });
-  }
-
-  appointments.push({ patientId, doctorId, start, end });
+  
   res.status(201).json({ message: 'Appointment scheduled.' });
 });
 

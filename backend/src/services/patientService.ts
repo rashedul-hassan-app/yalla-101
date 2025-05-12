@@ -8,9 +8,5 @@ const patients: Patient[] = Array.from({ length: 50 }).map((_, i) => ({
 }));
 
 export function searchPatients(q: string, page: number, limit: number) {
-  const filtered = patients.filter(p => p.name.toLowerCase().includes(q.toLowerCase()));
-  const total = filtered.length;
-  const start = (page - 1) * limit;
-  const data = filtered.slice(start, start + limit);
-  return { total, data };
+  // TODO:
 }

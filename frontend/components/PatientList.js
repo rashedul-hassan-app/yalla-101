@@ -22,7 +22,7 @@ export default function PatientList({ navigation }) {
   }, [debouncedQ]);
 
   const loadMore = () => {
-    if (!next || loading) return;
+    if (!next || loading || q ==='') return;
     setLoading(true);
     fetchPatients(debouncedQ, page + 1).then(res => {
       setData(d => [...d, ...res.data]);
