@@ -1,5 +1,7 @@
-import Joi from 'joi';
+import { z } from "zod";
 
-export const paginationSchema = Joi.object({
-  // TODO: add more validation rules
+export const paginationSchema = z.object({
+  q: z.string().min(2),
+  page: z.number().gt(0),
+  limit: z.number().gt(0).lt(50),
 });
