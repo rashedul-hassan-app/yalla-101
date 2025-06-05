@@ -9,14 +9,8 @@ Task 1: Patient List with Search & Infinite Scroll
 - Screen: searchable list.
 
 - Features:
-
-    - Debounced search (300 ms)
-
-    - Infinite scroll (append pages)
-
-    - Loading / empty / error states
-
-    - “Book” button per item
+    - Infinite scroll (append pages): already implemented, inspect code for bugs, refactor, improve
+    - (extra) Add Loading / empty / error states
 </details>
 
 Task 2: Offline-First Cache & Background Sync
@@ -36,7 +30,7 @@ Enhancement: wrap Q1 list with caching layer:
 
 <br />
 🧮 BACKEND 🧮
-
+<details>
 **Task 1 (20 min): Paginated Patient Search**
 What to build
 
@@ -71,9 +65,11 @@ What to build
 
 - The Express route wiring it all up.
 
-
+</details>
 
 **Task 2 (20 min): Appointment Scheduling with Conflict**
+
+<details>
 What to build
 
 - Endpoint: POST /appointments
@@ -102,3 +98,4 @@ What to build
 - A service scheduleAppointment(raw) that throws { status, message } on errors.
 
 - The Express route handling those errors and sending correct HTTP codes.
+</details>
