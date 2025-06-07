@@ -17,7 +17,7 @@ export function searchPatients(
   if (limit) limitDefaullt = limit;
   const total = patients.length;
   const index = (total / limit) * (page - 1);
-  const data = patients.splice(index, limit);
+  const data = patients.slice(index, limit);
   if (data.length === 0) {
     return { total: total, data: [] };
   }
