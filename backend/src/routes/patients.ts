@@ -25,7 +25,7 @@ router.get("/", (req, res) => {
       ? `/patients?q=${q}&page=${page + 1}&limit=${limit}`
       : null;
 
-  res.json({ total, page, limit, nextPage, data });
+  return res.json({ total, page, limit, nextPage, data });
 });
 
 export default router;
