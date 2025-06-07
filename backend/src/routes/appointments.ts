@@ -28,26 +28,7 @@ const router = Router();
 router.post("/", (req, res) => {
   const { error, value } = schema.validate(req.body);
   // TODO:
-  if (error) {
-    return res.status(400).json({ error: error.details[0].message });
-  }
-  const { patientId, doctorId, start, end } = value;
-  const booked = Appointments.some(
-    (appointment) =>
-      appointment.doctorId === doctorId &&
-      appointment.start === Date.parse(start).toString()
-  );
-  if (booked) {
-    return res.status(409).json({ error: "Doctor is not available." });
-  }
-  Appointments.push({
-    patientId,
-    doctorId,
-    start: Date.parse(start).toString(),
-    end: Date.parse(end).toString(),
-  });
-  console.log("Appointments", Appointments[Appointments.length - 1]);
-  res.status(201).json({ message: "Appointment scheduled." });
+  
 });
 
 router.get("/getLists", (req, res) => {

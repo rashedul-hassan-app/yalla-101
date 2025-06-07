@@ -14,6 +14,7 @@ export function searchPatients(
 ): { total: number; data: Patient[] } {
   let limitDefaullt = 10;
   // TODO:
+
   if (limit) limitDefaullt = limit;
   const total = patients.length;
   const index = (total / limit) * (page - 1);
@@ -21,6 +22,7 @@ export function searchPatients(
   if (data.length === 0) {
     return { total: total, data: [] };
   }
+
 
   return { total: total, data: data };
 }

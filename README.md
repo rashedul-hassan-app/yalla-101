@@ -3,6 +3,13 @@ A small starter template having front end and backend
 
 
 📱 Frontend
+Checkout the correct Backend branch to work with your project
+
+```
+cd backend
+git checkout frontend-exam 
+npm i && npm start
+```
 
 Task 1: Patient List with Search & Infinite Scroll
 <details>
