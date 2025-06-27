@@ -15,6 +15,14 @@ export function searchPatients(
   let limitDefaullt = 10;
   // TODO:
 
+  if (limit) limitDefaullt = limit;
+  const total = patients.length;
+  const index = (total / limit) * (page - 1);
+  const data = patients.splice(index, limit);
+  if (data.length === 0) {
+    return { total: total, data: [] };
+  }
+
 
   return { total: total, data: data };
 }
